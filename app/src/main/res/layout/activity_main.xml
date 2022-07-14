@@ -1,0 +1,175 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/background"
+        tools:context=".MainActivity">
+
+        <ImageView
+            android:id="@+id/imageView"
+            android:layout_width="200dp"
+            android:layout_height="200dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:srcCompat="@drawable/login_camera" />
+
+        <TextView
+            android:id="@+id/textView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:fontFamily="@font/quicksand_medium"
+            android:text="THE MOVIE MANAGER"
+            android:textColor="@color/yesil"
+            android:textSize="30sp"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/imageView" />
+
+        <TextView
+            android:id="@+id/textView3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="30dp"
+            android:fontFamily="@font/quicksand_medium"
+            android:text="Login with Email"
+            android:textColor="#64646E"
+            android:textSize="26sp"
+            android:textStyle="normal"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/textView" />
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/textInputLayoutEmail"
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="6dp"
+            android:layout_marginEnd="8dp"
+            android:hint="Email"
+            android:textColorHint="#AEAEB4"
+            android:theme="@style/MyTextInputLayout"
+            app:boxCornerRadiusBottomEnd="36dp"
+            app:boxCornerRadiusBottomStart="36dp"
+            app:boxCornerRadiusTopEnd="36dp"
+            app:boxCornerRadiusTopStart="36dp"
+            app:boxStrokeColor="#FEAC02"
+            app:helperTextTextAppearance="@style/TextHelper"
+            app:hintAnimationEnabled="true"
+            app:hintTextAppearance="@style/TextLabel"
+            app:hintTextColor="#1C8E5D"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/textView3">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/editTextEmail"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:cursorVisible="true"
+                android:fontFamily="@font/quicksand_medium"
+                android:inputType="textEmailAddress"
+                android:textColor="@color/yesil"
+                android:textSize="20sp"
+                app:backgroundTint="@color/yesil" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/textInputLayoutPassword"
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="8dp"
+            android:layout_marginEnd="8dp"
+            android:hint="Password"
+            android:textColorHint="#AEAEB4"
+            android:theme="@style/MyTextInputLayout"
+            app:boxCornerRadiusBottomEnd="36dp"
+            app:boxCornerRadiusBottomStart="36dp"
+            app:boxCornerRadiusTopEnd="36dp"
+            app:boxCornerRadiusTopStart="36dp"
+            app:boxStrokeColor="#FEAC02"
+            app:helperTextTextAppearance="@style/TextHelper"
+            app:hintAnimationEnabled="true"
+            app:hintTextAppearance="@style/TextLabel"
+            app:hintTextColor="#1C8E5D"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/textInputLayoutEmail"
+            app:passwordToggleEnabled="true"
+            app:passwordToggleTint="#64646E">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/editTextPassword"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:cursorVisible="true"
+                android:fontFamily="@font/quicksand_medium"
+                android:textColor="@color/yesil"
+                android:textSize="20sp"
+                app:backgroundTint="@color/yesil" />
+
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <androidx.appcompat.widget.Toolbar
+            android:id="@+id/toolbar"
+            android:layout_width="match_parent"
+            android:layout_height="10dp"
+            android:background="@color/yesil"
+            android:minHeight="?attr/actionBarSize"
+            android:theme="?attr/actionBarTheme"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <Button
+            android:id="@+id/buttonLogin"
+            android:layout_width="300dp"
+            android:layout_height="60dp"
+            android:layout_marginTop="24dp"
+            android:background="@drawable/corner_background"
+            android:elevation="0dp"
+            android:fontFamily="@font/quicksand_bold"
+            android:gravity="center"
+            android:paddingTop="0dp"
+            android:paddingBottom="0dp"
+            android:text="Login"
+            android:textAllCaps="false"
+            android:textColor="#64646E"
+            android:textSize="26sp"
+            android:textStyle="bold"
+            app:backgroundTint="@color/acikSari"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/textInputLayoutPassword" />
+
+        <ImageView
+            android:id="@+id/imageViewInfoPassword"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="32dp"
+            android:layout_marginEnd="53dp"
+            android:visibility="visible"
+            app:layout_constraintEnd_toEndOf="@+id/textInputLayoutPassword"
+            app:layout_constraintTop_toTopOf="@+id/textInputLayoutPassword"
+            app:srcCompat="@drawable/info" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>
