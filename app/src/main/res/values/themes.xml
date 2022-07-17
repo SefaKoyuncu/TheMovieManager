@@ -18,12 +18,9 @@
     </style>
 
     <style name="MyTextInputLayout" parent="Widget.MaterialComponents.TextInputLayout.OutlinedBox">
-        <!-- border color -->
         <item name="boxStrokeColor">@color/acikSari</item>
         <item name="fontFamily">@font/quicksand_medium</item>
-        <!-- The color of the label when it is collapsed and the text field is active -->
         <item name="hintTextColor">@color/acikKirmizi</item>
-        <!-- The color of the label in all other text field states (such as resting and disabled) -->
         <item name="android:textColorHint">@color/acikSari</item>
     </style>
 
@@ -37,17 +34,9 @@
         <item name="fontFamily">@font/quicksand_medium</item>
     </style>
 
-
     <style name="TextInputLayoutStyle" parent="Widget.MaterialComponents.TextInputLayout.OutlinedBox.Dense">
         <item name="boxStrokeColor">#fff</item>
         <item name="boxStrokeWidth">2dp</item>
-    </style>
-
-    <style name="roundimageview" parent="">
-
-        <item name="cornerFamily">rounded</item>
-        <item name="cornerSize">36dp</item>
-
     </style>
 
 </resources>

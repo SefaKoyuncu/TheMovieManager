@@ -1,4 +1,4 @@
-package com.example.themoviemanager;
+package com.example.themoviemanager.fragments;
 
 import android.app.Activity;
 import android.content.Context;
@@ -28,6 +28,9 @@ import com.android.volley.Response;
 import com.android.volley.VolleyError;
 import com.android.volley.toolbox.StringRequest;
 import com.android.volley.toolbox.Volley;
+import com.example.themoviemanager.adapters.MovieAdapter;
+import com.example.themoviemanager.classes.Movies;
+import com.example.themoviemanager.R;
 //import com.example.themoviemanager.databinding.FragmentSearchBinding;
 
 import org.json.JSONArray;
@@ -84,8 +87,6 @@ public class SearchFragment extends Fragment
             }
         });
 
-        getMoviesFromApi(url+"wall");
-
         imageViewClearEdittext.setOnClickListener(new View.OnClickListener()
         {
             @Override
@@ -137,7 +138,6 @@ public class SearchFragment extends Fragment
                         JSONArray jsonArrayResults=jsonObject.getJSONArray("results");
                         for (int i = 0; i<jsonArrayResults.length(); i++)
                         {
-
                             JSONObject movieObject = jsonArrayResults.getJSONObject(i);
                             String title = movieObject.getString("original_title");
                             String original_language = movieObject.getString("original_language");

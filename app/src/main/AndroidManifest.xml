@@ -14,13 +14,13 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.TheMovieManager">
         <activity
-            android:name=".MovieDetailsActivity"
+            android:name=".activities.MovieDetailsActivity"
             android:exported="false" />
         <activity
-            android:name=".NavigationActivity"
+            android:name=".activities.NavigationActivity"
             android:exported="false" />
         <activity
-            android:name=".MainActivity"
+            android:name=".activities.MainActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

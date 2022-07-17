@@ -1,4 +1,4 @@
-package com.example.themoviemanager;
+package com.example.themoviemanager.activities;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.databinding.DataBindingUtil;
@@ -17,6 +17,7 @@ import android.text.TextWatcher;
 import android.view.View;
 import android.widget.Button;
 
+import com.example.themoviemanager.R;
 import com.example.themoviemanager.databinding.ActivityMainBinding;
 
 import java.util.regex.Pattern;
@@ -24,16 +25,14 @@ import java.util.regex.Pattern;
 public class MainActivity extends AppCompatActivity {
 
     private ActivityMainBinding binding;
-    private String mail;
-    private String password;
+    private String mail,password;
     private Dialog dialog;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
-        binding= DataBindingUtil.setContentView(this,R.layout.activity_main);
-
+        binding= DataBindingUtil.setContentView(this, R.layout.activity_main);
         dialog=new Dialog(MainActivity.this);
 
         binding.buttonLogin.setOnClickListener(new View.OnClickListener()
@@ -72,7 +71,7 @@ public class MainActivity extends AppCompatActivity {
                         handler.postDelayed(new Runnable() {
                             public void run() {
                                 dialog.dismiss();
-                                startActivity(new Intent(MainActivity.this,NavigationActivity.class));
+                                startActivity(new Intent(MainActivity.this, NavigationActivity.class));
                             }
                         }, 3000);
                     }

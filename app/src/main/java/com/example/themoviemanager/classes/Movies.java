@@ -1,6 +1,8 @@
-package com.example.themoviemanager;
+package com.example.themoviemanager.classes;
 
-public class Movies
+import java.io.Serializable;
+
+public class Movies implements Serializable
 {
     private String original_title;
     private String original_language;

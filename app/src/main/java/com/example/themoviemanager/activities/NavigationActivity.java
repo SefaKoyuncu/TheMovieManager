@@ -1,4 +1,4 @@
-package com.example.themoviemanager;
+package com.example.themoviemanager.activities;
 
 import android.os.Bundle;
 
@@ -9,7 +9,11 @@ import androidx.fragment.app.FragmentTransaction;
 
 
 import com.etebarian.meowbottomnavigation.MeowBottomNavigation;
+import com.example.themoviemanager.R;
 import com.example.themoviemanager.databinding.ActivityNavigationBinding;
+import com.example.themoviemanager.fragments.FavoritesFragment;
+import com.example.themoviemanager.fragments.SearchFragment;
+import com.example.themoviemanager.fragments.WatchlistFragment;
 
 import kotlin.Unit;
 import kotlin.jvm.functions.Function1;
@@ -24,10 +28,7 @@ public class NavigationActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
-        binding= DataBindingUtil.setContentView(this,R.layout.activity_navigation);
-      //  setContentView(R.layout.activity_navigation);
-       // meowBottomNavigation=findViewById(R.id.meowBottomNavigation);
-
+        binding= DataBindingUtil.setContentView(this, R.layout.activity_navigation);
 
         binding.meowBottomNavigation.add(new MeowBottomNavigation.Model(1,R.drawable.search));
         binding.meowBottomNavigation.add(new MeowBottomNavigation.Model(2,R.drawable.list));

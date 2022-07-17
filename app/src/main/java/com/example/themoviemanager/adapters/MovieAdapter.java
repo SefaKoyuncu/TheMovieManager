@@ -1,4 +1,4 @@
-package com.example.themoviemanager;
+package com.example.themoviemanager.adapters;
 
 import android.content.Context;
 import android.content.Intent;
@@ -12,6 +12,9 @@ import androidx.annotation.NonNull;
 import androidx.cardview.widget.CardView;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.example.themoviemanager.activities.MovieDetailsActivity;
+import com.example.themoviemanager.classes.Movies;
+import com.example.themoviemanager.R;
 import com.squareup.picasso.Picasso;
 
 import java.util.List;
@@ -21,7 +24,8 @@ public class MovieAdapter extends RecyclerView.Adapter<MovieAdapter.CardviewTasa
     private Context mContext;
     private List<Movies> moviesList;
 
-    public MovieAdapter(Context mContext, List<Movies> moviesList) {
+    public MovieAdapter(Context mContext, List<Movies> moviesList)
+    {
         this.mContext = mContext;
         this.moviesList = moviesList;
     }
@@ -31,7 +35,6 @@ public class MovieAdapter extends RecyclerView.Adapter<MovieAdapter.CardviewTasa
     public CardviewTasarimNesneleriniTutucu onCreateViewHolder(@NonNull ViewGroup parent, int viewType)
     {
         View itemView= LayoutInflater.from(parent.getContext()).inflate(R.layout.card_movie_design,parent,false);
-
         return new CardviewTasarimNesneleriniTutucu(itemView);
     }
 
@@ -39,8 +42,6 @@ public class MovieAdapter extends RecyclerView.Adapter<MovieAdapter.CardviewTasa
     public void onBindViewHolder(@NonNull CardviewTasarimNesneleriniTutucu holder, int position)
     {
         final Movies movies=moviesList.get(position);
-
-
         Picasso.get().load("https://image.tmdb.org/t/p/w500"+movies.getPoster_path()).into(holder.imageViewImage);
 
         if (!movies.getRelease_date().isEmpty())
@@ -57,20 +58,22 @@ public class MovieAdapter extends RecyclerView.Adapter<MovieAdapter.CardviewTasa
             @Override
             public void onClick(View view)
             {
-                Intent intent=new Intent(mContext,MovieDetailsActivity.class);
+                Movies moviesForDetails=new Movies();
 
-                intent.putExtra("title",movies.getOriginal_title());
-                intent.putExtra("language",movies.getOriginal_language());
-                intent.putExtra("overview",movies.getOverview());
-                intent.putExtra("poster_path",movies.getPoster_path());
-                intent.putExtra("relesase_date",movies.getRelease_date());
-                intent.putExtra("vote_average",movies.getVote_average());
+                moviesForDetails.setOriginal_title(movies.getOriginal_title());
+                moviesForDetails.setOriginal_language(movies.getOriginal_language());
+                moviesForDetails.setOverview(movies.getOverview());
+                moviesForDetails.setPoster_path(movies.getPoster_path());
+                moviesForDetails.setRelease_date(movies.getRelease_date());
+                moviesForDetails.setVote_average(movies.getVote_average());
+
+                Intent intent=new Intent(mContext, MovieDetailsActivity.class);
+                intent.putExtra("instance",moviesForDetails);
 
                 mContext.startActivity(intent);
             }
         });
     }
-
 
     @Override
     public int getItemCount()
@@ -84,7 +87,6 @@ public class MovieAdapter extends RecyclerView.Adapter<MovieAdapter.CardviewTasa
         public ImageView imageViewImage;
         public TextView textViewDetailsTitle;
         public CardView cardView;
-
 
         public CardviewTasarimNesneleriniTutucu(@NonNull View itemView)
         {
