@@ -9,7 +9,7 @@ import androidx.room.Query;
 import java.util.List;
 
 @Dao
-public interface MovieFavDAO
+public interface MovieDAO
 {
     //Fav listesi için
     @Insert(onConflict = OnConflictStrategy.IGNORE)
@@ -20,6 +20,9 @@ public interface MovieFavDAO
 
     @Query("select * from MovieFavDB")
     List<MovieFav> getAllMovieFavs();
+
+    @Query("select * from MovieFavDB where film_id==:id")
+    MovieFav getMovieFavById(int id);
 
     //-----------------------------
 
@@ -32,5 +35,8 @@ public interface MovieFavDAO
 
     @Query("select * from MovieWatchlistDB")
     List<MovieWatchlist> getAllMovieWatchlist();
+
+    @Query("select * from MovieWatchlistDB where film_id==:id")
+    MovieWatchlist getMovieListById(int id);
     //-----------------------------
 }

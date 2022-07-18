@@ -5,10 +5,12 @@ import androidx.room.Ignore;
 import androidx.room.PrimaryKey;
 
 @Entity(tableName = "MovieWatchlistDB")
-public class MovieWatchlist
+public class MovieWatchlist extends Object
 {
     @PrimaryKey(autoGenerate = true)
     private int id;
+
+    private int film_id;
 
     private String title;
 
@@ -17,13 +19,10 @@ public class MovieWatchlist
     public MovieWatchlist() {
     }
 
-    public MovieWatchlist(int id, String title, String poster_path) {
+    public MovieWatchlist(int id, int film_id, String title, String poster_path)
+    {
+        this.film_id = film_id;
         this.id = id;
-        this.title = title;
-        this.poster_path = poster_path;
-    }
-    @Ignore
-    public MovieWatchlist(String title, String poster_path) {
         this.title = title;
         this.poster_path = poster_path;
     }
@@ -34,6 +33,14 @@ public class MovieWatchlist
 
     public void setId(int id) {
         this.id = id;
+    }
+
+    public int getFilm_id() {
+        return film_id;
+    }
+
+    public void setFilm_id(int film_id) {
+        this.film_id = film_id;
     }
 
     public String getTitle() {

@@ -2,6 +2,7 @@ package com.example.themoviemanager.adapters;
 
 import android.content.Context;
 import android.content.Intent;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -60,12 +61,20 @@ public class MovieAdapter extends RecyclerView.Adapter<MovieAdapter.CardviewTasa
             {
                 Movies moviesForDetails=new Movies();
 
+                Log.e("title",movies.getOriginal_title());
+                Log.e("language",movies.getOriginal_language());
+                Log.e("overview",movies.getOverview());
+                Log.e("poster path",movies.getPoster_path());
+                Log.e("date",movies.getRelease_date());
+                Log.e("vote",String.valueOf(movies.getVote_average()));
+
                 moviesForDetails.setOriginal_title(movies.getOriginal_title());
                 moviesForDetails.setOriginal_language(movies.getOriginal_language());
                 moviesForDetails.setOverview(movies.getOverview());
                 moviesForDetails.setPoster_path(movies.getPoster_path());
                 moviesForDetails.setRelease_date(movies.getRelease_date());
                 moviesForDetails.setVote_average(movies.getVote_average());
+                moviesForDetails.setFilm_id(movies.getFilm_id());
 
                 Intent intent=new Intent(mContext, MovieDetailsActivity.class);
                 intent.putExtra("instance",moviesForDetails);

@@ -5,10 +5,12 @@ import androidx.room.Ignore;
 import androidx.room.PrimaryKey;
 
 @Entity(tableName = "MovieFavDB")
-public class MovieFav
+public class MovieFav extends Object
 {
     @PrimaryKey(autoGenerate = true)
     private int id;
+
+    private int film_id;
 
     private String title;
 
@@ -19,20 +21,11 @@ public class MovieFav
 
     }
 
-    public MovieFav(int id,String title, String poster_path)
+    public MovieFav(int id,int film_id,String title, String poster_path)
     {
         this.id=id;
+        this.film_id=film_id;
         this.title = title;
-        this.poster_path = poster_path;
-    }
-    @Ignore
-    public MovieFav(String title, String poster_path) {
-        this.title = title;
-        this.poster_path = poster_path;
-    }
-
-    @Ignore
-    public MovieFav(String poster_path) {
         this.poster_path = poster_path;
     }
 
@@ -42,6 +35,14 @@ public class MovieFav
 
     public void setId(int id) {
         this.id = id;
+    }
+
+    public int getFilm_id() {
+        return film_id;
+    }
+
+    public void setFilm_id(int film_id) {
+        this.film_id = film_id;
     }
 
     public String getTitle() {

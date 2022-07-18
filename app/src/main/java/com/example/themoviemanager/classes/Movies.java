@@ -4,6 +4,7 @@ import java.io.Serializable;
 
 public class Movies implements Serializable
 {
+    private int film_id;
     private String original_title;
     private String original_language;
     private String overview;
@@ -15,14 +16,23 @@ public class Movies implements Serializable
     {
     }
 
-    public Movies(String original_title, String original_language, String overview, String poster_path, String release_date, double vote_average)
+    public Movies(int film_id,String original_title, String original_language, String overview, String poster_path, String release_date, double vote_average)
     {
+        this.film_id = film_id;
         this.original_title = original_title;
         this.original_language = original_language;
         this.overview = overview;
         this.poster_path = poster_path;
         this.release_date = release_date;
         this.vote_average = vote_average;
+    }
+
+    public int getFilm_id() {
+        return film_id;
+    }
+
+    public void setFilm_id(int film_id) {
+        this.film_id = film_id;
     }
 
     public String getOriginal_title() {

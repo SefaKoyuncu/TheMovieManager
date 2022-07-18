@@ -17,12 +17,12 @@ import com.squareup.picasso.Picasso;
 
 import java.util.List;
 
-public class MovieFavandListAdapter extends RecyclerView.Adapter<MovieFavandListAdapter.CardviewTasarimNesneleriniTutucu>
+public class MovieFavAdapter extends RecyclerView.Adapter<MovieFavAdapter.CardviewTasarimNesneleriniTutucu>
 {
     private Context mContext;
     private List<MovieFav> moviesList;
 
-    public MovieFavandListAdapter(Context mContext, List<MovieFav> moviesList) {
+    public MovieFavAdapter(Context mContext, List<MovieFav> moviesList) {
         this.mContext = mContext;
         this.moviesList = moviesList;
     }

@@ -11,7 +11,7 @@ public abstract class AppDatabase extends RoomDatabase
 {
     public static final String DATABASE_NAME = "MovieDB";
     private static AppDatabase instance;
-    public abstract MovieFavDAO movieFavDAO();
+    public abstract MovieDAO movieDAO();
 
     public static synchronized AppDatabase getInstance(Context context){
         if (instance == null)

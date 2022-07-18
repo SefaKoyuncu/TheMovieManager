@@ -145,11 +145,13 @@ public class SearchFragment extends Fragment
                             String poster_path = movieObject.getString("poster_path");
                             String release_date = movieObject.getString("release_date");
                             double vote_average = movieObject.getDouble("vote_average");
+                            int film_id = movieObject.getInt("id");
 
-                            Movies movies=new Movies(title,original_language,overview,poster_path,release_date,vote_average);
+                            Movies movies=new Movies(film_id,title,original_language,overview,poster_path,release_date,vote_average);
 
                             Log.e("title",title);
                             Log.e("date",release_date);
+                            Log.e("id",String.valueOf(film_id));
 
                             moviesArrayList.add(movies);
                         }

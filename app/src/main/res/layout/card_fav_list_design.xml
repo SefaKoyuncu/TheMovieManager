@@ -39,6 +39,7 @@
                 android:layout_marginEnd="9dp"
                 android:fontFamily="sans-serif-medium"
                 android:text="TextView"
+                android:textColor="@color/yesil"
                 android:textSize="16sp"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
