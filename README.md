@@ -38,8 +38,8 @@
   <tr>
     <td><img src="search2.jpeg" width="200" height="400"></td>
     <td><img src="details.jpeg" width="200" height="400"></td>
-    <td><img src="addedfavindetails.jpeg" width="200" height="400"></td>
-    <td><img src="addedfavandwathlistindetails.jpeg" width="200" height="400"></td>
+    <td><img src="added fav in details.jpeg" width="200" height="400"></td>
+    <td><img src="added fav and wathlist in details.jpeg" width="200" height="400"></td>
   </tr>
  </table>
  
