@@ -72,6 +72,7 @@ public class MainActivity extends AppCompatActivity {
                             public void run() {
                                 dialog.dismiss();
                                 startActivity(new Intent(MainActivity.this, NavigationActivity.class));
+                                finish();
                             }
                         }, 3000);
                     }
