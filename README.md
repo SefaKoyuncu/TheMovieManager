@@ -24,10 +24,10 @@
 
 <table>
   <tr>
+  <td><img src="loading.jpeg" width="200" height="400"></td>
     <td><img src="search.jpeg" width="200" height="400"></td>
-    <td><img src="search.jpeg" width="200" height="400"></td>
-    <td><img src="search.jpeg" width="200" height="400"></td>
-      <td><img src="search.jpeg" width="200" height="400"></td>
+    <td><img src="favorites.jpeg" width="200" height="400"></td>
+    <td><img src="watchlist.jpeg" width="200" height="400"></td>
   </tr>
  </table>
  
@@ -36,10 +36,10 @@
 <table>
  
   <tr>
-    <td><img src="search.jpeg" width="200" height="400"></td>
-    <td><img src="search.jpeg" width="200" height="400"></td>
-    <td><img src="search.jpeg" width="200" height="400"></td>
-    <td><img src="search.jpeg" width="200" height="400"></td>
+    <td><img src="search2.jpeg" width="200" height="400"></td>
+    <td><img src="details.jpeg" width="200" height="400"></td>
+    <td><img src="addedfavindetails.jpeg" width="200" height="400"></td>
+    <td><img src="addedfavandwathlistindetails.jpeg" width="200" height="400"></td>
   </tr>
  </table>
  
@@ -48,8 +48,8 @@
 <table>
  
   <tr>
-    <td><img src="search.jpeg" width="200" height="400"></td>
-    <td><img src="search.jpeg" width="200" height="400"></td>
+    <td><img src="favorites2.jpeg" width="200" height="400"></td>
+    <td><img src="watchlist2.jpeg" width="200" height="400"></td>
   </tr>
  </table>
 
