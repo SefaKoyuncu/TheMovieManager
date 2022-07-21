@@ -50,6 +50,8 @@
   <tr>
     <td><img src="favorites2.jpeg" width="200" height="400"></td>
     <td><img src="watchlist2.jpeg" width="200" height="400"></td>
+    <td><img src="icon.png" width="200" height="200"></td>
+    <td><img src="icon_round.png" width="200" height="200"></td>
   </tr>
  </table>
 
