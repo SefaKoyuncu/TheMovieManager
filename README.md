@@ -51,7 +51,7 @@
     <td><img src="favorites2.jpeg" width="200" height="400"></td>
     <td><img src="watchlist2.jpeg" width="200" height="400"></td>
     <td><img src="icon.png" width="100" height="100"></td>
-    <td><img src="icon_round.png" width="160" height="160"></td>
+    <td><img src="icon_round.png" width="100" height="100"></td>
   </tr>
  </table>
 
