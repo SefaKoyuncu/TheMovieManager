@@ -1,6 +1,7 @@
 package com.example.themoviemanager.adapters;
 
 import android.content.Context;
+import android.content.Intent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -12,6 +13,8 @@ import androidx.cardview.widget.CardView;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.themoviemanager.R;
+import com.example.themoviemanager.activities.MovieDetailsActivity;
+import com.example.themoviemanager.classes.Movies;
 import com.example.themoviemanager.room.MovieFav;
 import com.example.themoviemanager.room.MovieWatchlist;
 import com.squareup.picasso.Picasso;
@@ -47,6 +50,36 @@ public class MovieListAdapter extends RecyclerView.Adapter<MovieListAdapter.Card
 
         holder.textViewDetailsTitle.setText(movies.getTitle());
 
+        holder.cardView.setOnClickListener(new View.OnClickListener()
+        {
+            @Override
+            public void onClick(View view)
+            {
+                Movies moviesForDetails=new Movies();
+
+
+               /* Log.e("title",movies.getOriginal_title());
+                Log.e("language",movies.getOriginal_language());
+                Log.e("overview",movies.getOverview());
+                Log.e("poster path",movies.getPoster_path());
+                Log.e("date",movies.getRelease_date());
+                Log.e("vote",String.valueOf(movies.getVote_average()));*/
+
+                moviesForDetails.setFilm_id(movies.getFilm_id());
+                moviesForDetails.setOriginal_title(movies.getTitle());
+                moviesForDetails.setOverview(movies.getOverview());
+                moviesForDetails.setPoster_path(movies.getPoster_path());
+                moviesForDetails.setRelease_date(movies.getRelease_date());
+                moviesForDetails.setVote_average(movies.getVote_average());
+                String flag="list";
+
+                Intent intent=new Intent(mContext, MovieDetailsActivity.class);
+                intent.putExtra("instance",moviesForDetails);
+                intent.putExtra("flag",flag);
+
+                mContext.startActivity(intent);
+            }
+        });
     }
 
 
