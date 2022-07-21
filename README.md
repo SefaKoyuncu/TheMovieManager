@@ -7,6 +7,8 @@
 - By searching on the search page, you can see the movie photo, movie name and movie date, and click on the one you want to go to the detail page.
 
 - On the detail page, you can add the movie to favorites or watchlist. Then you can see the movie's name and photo in the watch list or favorites.
+<br />
+<img src="Android_logo.png" width="100" height="100"><a id="raw-url" href="https://raw.githubusercontent.com/SefaKoyuncu/TheMovieManager/master/themoviemanager.apk">Download APK Here</a>
 
 ------------
 #### Screenshots
@@ -50,6 +52,8 @@
   <tr>
     <td><img src="favorites2.jpeg" width="200" height="400"></td>
     <td><img src="watchlist2.jpeg" width="200" height="400"></td>
+    <td><img src="icon.png" width="100" height="100"></td>
+    <td><img src="icon_round.png" width="100" height="100"></td>
   </tr>
  </table>
 
