@@ -75,9 +75,11 @@ public class MovieAdapter extends RecyclerView.Adapter<MovieAdapter.CardviewTasa
                 moviesForDetails.setRelease_date(movies.getRelease_date());
                 moviesForDetails.setVote_average(movies.getVote_average());
                 moviesForDetails.setFilm_id(movies.getFilm_id());
+                String flag="search";
 
                 Intent intent=new Intent(mContext, MovieDetailsActivity.class);
                 intent.putExtra("instance",moviesForDetails);
+                intent.putExtra("flag",flag);
 
                 mContext.startActivity(intent);
             }

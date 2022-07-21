@@ -38,12 +38,21 @@ public class FavoritesFragment extends Fragment {
     {
         //binding = DataBindingUtil.inflate(inflater, R.layout.fragment_favorites,container, false);
         //View view = binding.getRoot();
+
         View view= inflater.inflate(R.layout.fragment_favorites, container, false);
         animationViewFav=view.findViewById(R.id.animationViewFav);
         textViewFav=view.findViewById(R.id.textViewFav);
         rv=view.findViewById(R.id.rv);
 
+        optionsFavoritesDBandRecyclerview();
+
+        return view;
+    }
+
+    private void optionsFavoritesDBandRecyclerview()
+    {
         appDatabase = AppDatabase.getInstance(getContext());
+        moviesArrayList.clear();
         List<MovieFav> movies = appDatabase.movieDAO().getAllMovieFavs();
         moviesArrayList.addAll(movies);
 
@@ -54,17 +63,31 @@ public class FavoritesFragment extends Fragment {
             rv.setVisibility(View.VISIBLE);
 
             rv.setHasFixedSize(true);
+            movieFavandListAdapter=null;
             movieFavandListAdapter =new MovieFavAdapter(getContext(),moviesArrayList);
             rv.setLayoutManager(new StaggeredGridLayoutManager(1,StaggeredGridLayoutManager.VERTICAL));
             rv.setAdapter(movieFavandListAdapter);
+            movieFavandListAdapter.notifyDataSetChanged();
         }
         else
         {
-           animationViewFav.setVisibility(View.VISIBLE);
-           textViewFav.setVisibility(View.VISIBLE);
-           rv.setVisibility(View.INVISIBLE);
+            animationViewFav.setVisibility(View.VISIBLE);
+            textViewFav.setVisibility(View.VISIBLE);
+            rv.setVisibility(View.INVISIBLE);
         }
+    }
 
-        return view;
+    @Override
+    public void onStart()
+    {
+        super.onStart();
+    }
+
+    @Override
+    public void onResume()
+    {
+        super.onResume();
+        optionsFavoritesDBandRecyclerview();
+
     }
 }

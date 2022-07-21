@@ -35,7 +35,6 @@ public class WatchlistFragment extends Fragment
     private TextView textViewWatchlist;
     private RecyclerView rv;
 
-
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState)
@@ -49,8 +48,15 @@ public class WatchlistFragment extends Fragment
         textViewWatchlist=view.findViewById(R.id.textViewWatchlist);
         rv=view.findViewById(R.id.rv);
 
+        optionsWatchlistDBandRecyclerview();
 
+        return view;
+    }
+
+    private void optionsWatchlistDBandRecyclerview()
+    {
         appDatabase = AppDatabase.getInstance(getContext());
+        moviesArrayList.clear();
         List<MovieWatchlist> movies = appDatabase.movieDAO().getAllMovieWatchlist();
         moviesArrayList.addAll(movies);
 
@@ -61,9 +67,11 @@ public class WatchlistFragment extends Fragment
             rv.setVisibility(View.VISIBLE);
 
             rv.setHasFixedSize(true);
+            movieListAdapter=null;
             movieListAdapter =new MovieListAdapter(getContext(),moviesArrayList);
             rv.setLayoutManager(new StaggeredGridLayoutManager(1,StaggeredGridLayoutManager.VERTICAL));
             rv.setAdapter(movieListAdapter);
+            movieListAdapter.notifyDataSetChanged();
         }
         else
         {
@@ -72,7 +80,18 @@ public class WatchlistFragment extends Fragment
             rv.setVisibility(View.INVISIBLE);
         }
 
+    }
+    @Override
+    public void onStart()
+    {
+        super.onStart();
+    }
 
-        return view;
+    @Override
+    public void onResume()
+    {
+        super.onResume();
+        optionsWatchlistDBandRecyclerview();
+
     }
 }

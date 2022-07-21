@@ -66,6 +66,7 @@ public class MainActivity extends AppCompatActivity {
                         dialog.setContentView(R.layout.loading);
                         dialog.getWindow().setBackgroundDrawable(new ColorDrawable(Color.TRANSPARENT));
                         dialog.show();
+                        dialog.setCanceledOnTouchOutside(false);
 
                         Handler handler = new Handler();
                         handler.postDelayed(new Runnable() {
