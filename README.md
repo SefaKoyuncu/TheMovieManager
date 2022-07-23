@@ -8,7 +8,7 @@
 
 - On the detail page, you can add the movie to favorites or watchlist. Then you can see the movie's name and photo in the watch list or favorites.
 <br />
-Soon... <img src="Android_logo.png" width="100" height="100"><a id="raw-url" href="https://raw.githubusercontent.com/SefaKoyuncu/TheMovieManager/master/themoviemanager.apk">Download APK Here</a>
+<img src="Android_logo.png" width="100" height="100"><a id="raw-url" href="https://raw.githubusercontent.com/SefaKoyuncu/TheMovieManager/master/themoviemanager.apk">Download APK Here</a>
 
 ------------
 #### Screenshots
