@@ -2,7 +2,6 @@ package com.example.themoviemanager.fragments;
 
 import android.os.Bundle;
 
-import androidx.databinding.DataBindingUtil;
 import androidx.fragment.app.Fragment;
 import androidx.recyclerview.widget.RecyclerView;
 import androidx.recyclerview.widget.StaggeredGridLayoutManager;
@@ -14,13 +13,10 @@ import android.widget.TextView;
 
 import com.airbnb.lottie.LottieAnimationView;
 import com.example.themoviemanager.R;
-import com.example.themoviemanager.adapters.MovieFavAdapter;
 import com.example.themoviemanager.adapters.MovieListAdapter;
 //import com.example.themoviemanager.databinding.FragmentWatchlistBinding;
 import com.example.themoviemanager.room.AppDatabase;
 import com.example.themoviemanager.room.MovieWatchlist;
-
-import org.w3c.dom.Text;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -48,12 +44,12 @@ public class WatchlistFragment extends Fragment
         textViewWatchlist=view.findViewById(R.id.textViewWatchlist);
         rv=view.findViewById(R.id.rv);
 
-        optionsWatchlistDBandRecyclerview();
+        onWatchlistFragmentDatas();
 
         return view;
     }
 
-    private void optionsWatchlistDBandRecyclerview()
+    private void onWatchlistFragmentDatas()
     {
         appDatabase = AppDatabase.getInstance(getContext());
         moviesArrayList.clear();
@@ -91,7 +87,7 @@ public class WatchlistFragment extends Fragment
     public void onResume()
     {
         super.onResume();
-        optionsWatchlistDBandRecyclerview();
+        onWatchlistFragmentDatas();
 
     }
 }

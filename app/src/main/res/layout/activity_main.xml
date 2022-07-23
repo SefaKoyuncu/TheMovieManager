@@ -81,6 +81,7 @@
                 android:cursorVisible="true"
                 android:fontFamily="@font/quicksand_medium"
                 android:inputType="textEmailAddress"
+                android:maxLines="1"
                 android:textColor="@color/yesil"
                 android:textSize="20sp"
                 app:backgroundTint="@color/yesil" />
@@ -119,6 +120,7 @@
                 android:layout_height="wrap_content"
                 android:cursorVisible="true"
                 android:fontFamily="@font/quicksand_medium"
+                android:maxLines="1"
                 android:textColor="@color/yesil"
                 android:textSize="20sp"
                 app:backgroundTint="@color/yesil" />

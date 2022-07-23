@@ -2,7 +2,6 @@ package com.example.themoviemanager.fragments;
 
 import android.os.Bundle;
 
-import androidx.databinding.DataBindingUtil;
 import androidx.fragment.app.Fragment;
 import androidx.recyclerview.widget.RecyclerView;
 import androidx.recyclerview.widget.StaggeredGridLayoutManager;
@@ -44,12 +43,12 @@ public class FavoritesFragment extends Fragment {
         textViewFav=view.findViewById(R.id.textViewFav);
         rv=view.findViewById(R.id.rv);
 
-        optionsFavoritesDBandRecyclerview();
+        onLoadFavoritesFragmentDatas();
 
         return view;
     }
 
-    private void optionsFavoritesDBandRecyclerview()
+    private void onLoadFavoritesFragmentDatas()
     {
         appDatabase = AppDatabase.getInstance(getContext());
         moviesArrayList.clear();
@@ -87,7 +86,7 @@ public class FavoritesFragment extends Fragment {
     public void onResume()
     {
         super.onResume();
-        optionsFavoritesDBandRecyclerview();
+        onLoadFavoritesFragmentDatas();
 
     }
 }
